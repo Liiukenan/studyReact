@@ -23,7 +23,7 @@ ReactDOM.render(
 // });
 // let fetchComments=new Promise((resolve,reject)=>{
 //   resolve({comments:[5,6,7]})
-// });
+// });p
 
 // class Clock extends React.Component{
 //   constructor(props){
