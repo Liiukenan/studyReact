@@ -5,7 +5,7 @@ class Toggle extends React.Component {
     this.state = {isToggleOn: true,txt:props.txt};
 
     // 为了在回调中使用 `this`，这个绑定是必不可少的
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
@@ -19,9 +19,9 @@ class Toggle extends React.Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      </button>
+      // <button onClick={this.handleClick}>
+      //   {this.state.isToggleOn ? 'ON' : 'OFF'}
+      // </button>
     );
   }
 }
