@@ -1,15 +1,11 @@
-import { VisibilityFilters } from './actions'
-const initialState = {
-  visibilityFilter: VisibilityFilters.SHOW_ALL,
-  todos: []
-}
-function todoApp(state = initialState, action) {
-  switch (action.type) {
-    case SET_VISIBILITY_FILTER:
-      return Object.assign({}, state, {
-        visibilityFilter: action.filter
-      })
-    default:
-      return state
-  }
+const defaultState={
+  inputValue:'write something',
+  list:[
+    '早上八点开晨会',
+    '中午十二点吃饭',
+    '晚上七点半回家'
+  ]
+};
+export default (state=defaultState,action)=>{
+  return state;
 }
