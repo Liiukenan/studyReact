@@ -1,4 +1,6 @@
 import React from 'react';
+import {PersistGate} from 'redux-persist/lib/integration/react';
+import {persistor} from './store/index'
 // import {Provider} from 'react-redux';
 // import {createStore} from 'redux'
 // import todoApp from './store/todos'
@@ -39,7 +41,10 @@ function App() {
                     </div>
                 </Provider> */}
           {/* <HookExample /> */}
-          <TodoList />
+              <PersistGate persistor={persistor}>
+                   <TodoList />
+              </PersistGate>
+         
         </div>
     // </Provider>
   );

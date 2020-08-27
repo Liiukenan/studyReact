@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'antd/dist/antd.css'
-import store from '../store'
+import {store} from '../store/index.js';
 import {changeInputAction,addItemAction,deleteItemAction} from '../store/actionCreators'
 // import{Input,Button} from 'antd'
 // const data=[
