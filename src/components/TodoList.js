@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import {store} from '../store/index.js';
-import {changeInputAction,addItemAction,deleteItemAction} from '../store/actionCreators'
+import {changeInputAction,addItemAction,deleteItemAction,getListACtion} from '../store/actionCreators'
 // import{Input,Button} from 'antd'
 // const data=[
 //     '早上八点开晨会',
 //     '中午十二点吃饭',
 //     '晚上七点半回家'
 // ]
+import axios from 'axios'
 import TodoListUI from './TodoListUI'
 class TodoList extends Component {
      constructor(props){
@@ -20,6 +21,14 @@ class TodoList extends Component {
     deleteItem(index){
         const action=deleteItemAction(index);
         store.dispatch(action)
+    }
+    componentDidMount(){
+        axios.get('https://www.easy-mock.com/mock/5f47dd07cad6947846f0009b/learn/list').then((res)=>{
+            console.log(res.data);
+            const data=res.data;
+            const action=getListACtion(data);
+            store.dispatch(action);
+        })
     }
     storeChange(){
         this.setState(store.getState());

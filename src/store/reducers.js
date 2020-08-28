@@ -1,4 +1,4 @@
-import {CHANGE_INPUT,ADD_ITEM,DELETE_ITEM} from './actionType';
+import {CHANGE_INPUT,ADD_ITEM,DELETE_ITEM,GET_LIST} from './actionType';
 import * as _ from 'lodash'
 const defaultState={
   inputValue:'write something',
@@ -29,6 +29,10 @@ export default (state=defaultState,action)=>{
       let newState= _.cloneDeep(state);
       newState.list.splice(action.index,1);
       return newState;
+    case GET_LIST:
+      let listData= _.cloneDeep(state);
+      listData.list=action.data.data.list;
+      return listData;
     default:
       return state
   }

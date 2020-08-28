@@ -4,10 +4,6 @@ class TodoListUI extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.deleteItem=this.deleteItem.bind(this);
-    }
-    deleteItem(index,e){
-        this.props.deleteItem(index);
     }
     render() {
         return (
@@ -22,7 +18,7 @@ class TodoListUI extends Component {
                <div style={{margin:'10px'}}>
                 <ul>
                     {this.props.list.map((item,index)=><li key={index} 
-                    onClick={(e)=>this.deleteItem(index,e)}>{item}</li>)}
+                    onClick={()=>this.props.deleteItem(index)}>{item}</li>)}
                 </ul>
                </div>
             </div>
