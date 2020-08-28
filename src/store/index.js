@@ -9,7 +9,6 @@ import reducer from './reducers'
 
 // 中间件
 import thunk from 'redux-thunk'
-console.log( process.env.NODE_ENV);
 const storageConfig = {
     key: 'root', 
     storage:storageSession, // 缓存机制
