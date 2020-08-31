@@ -7,6 +7,8 @@ import storageSession from 'redux-persist/lib/storage/session'
 
 import reducer from './reducers'
 
+
+
 // 中间件
 import thunk from 'redux-thunk'
 const storageConfig = {
@@ -24,6 +26,9 @@ export const store = process.env.NODE_ENV === 'production' ? (
         createStore(myPersistReducer, applyMiddleware(thunk))
     )
 )
-// export const store = createStore(myPersistReducer,enhancer);
-// const store=createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 export const persistor = persistStore(store);
+
+
+
+
+
